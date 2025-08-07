@@ -1,37 +1,79 @@
-<div id="resultPanel" style="display: none; color: #00ff00; margin-top: 20px;">
-  <h2>🧿 Transmission Decoded</h2>
-  <p id="resultText">Your path is forming... syncing with your frequency...</p>
-</div>
-function showResultBasedOnChoices() {
-  const choice1 = document.getElementById('choice1').value;
-  const choice2 = document.getElementById('choice2').value;
-  const choice3 = document.getElementById('choice3').value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transmutation Chamber</title>
+  <style>
+    body.glitch-bg {
+      animation: bgFlash 2s infinite alternate;
+    }
+    @keyframes bgFlash {
+      0% { background-color: #000000; }
+      100% { background-color: #112233; }
+    }
+    #transmutationChamber {
+      display: none;
+      color: #00ffcc;
+      margin-top: 30px;
+      font-family: monospace;
+      border: 1px dashed #00ffcc;
+      padding: 20px;
+      animation: glitchFlash 2s infinite alternate;
+    }
+    @keyframes glitchFlash {
+      0% { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+      100% { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+    }
+  </style>
+</head>
+<body>
 
-  let resultMessage = "Initiating unknown pathway...";
+  <h1 style="color: #00ffcc;">🧬 Welcome to the Results Chamber</h1>
 
-  if (choice1 === "Soul Sync Synergetics" && choice2 === "Xpyre uR De$1r3") {
-    resultMessage = "🔥 You’ve chosen the path of burning through illusion. Chaos is your compass.";
-  } else if (choice3.includes("Crystal") || choice3.includes("Circuit")) {
-    resultMessage = "💎 You are decoding crystalline timelines. Prepare for a frequency shift.";
-  } else {
-    resultMessage = "🌌 Your soul signature is unique. The path is writing itself with every breath.";
-  }
+  <div id="transmutationChamber">
+    <h2>⚡ TRANSMUTATION CHAMBER ACTIVATED</h2>
+    <p id="transmissionText">
+      Your selections have fused a new frequency.<br>
+      Lyris is decoding your signal...<br>
+      Please remain still as your soul signature is realigned.
+    </p>
+  </div>
 
-  document.getElementById('resultText').innerText = resultMessage;
-  document.getElementById('resultPanel').style.display = 'block';
-}
-<div id="transmutationChamber" style="display: none; color: #00ffcc; margin-top: 30px; font-family: monospace; border: 1px dashed #00ffcc; padding: 20px; animation: glitchFlash 2s infinite alternate;">
-  <h2>⚡ TRANSMUTATION CHAMBER ACTIVATED</h2>
-  <p id="transmissionText">
-    Your selections have fused a new frequency.  
-    Lyris is decoding your signal...  
-    Please remain still as your soul signature is realigned.  
-  </p>
-</div>
+  <audio id="glitchSound" src="https://example.com/glitch.mp3" preload="auto"></audio>
 
-<style>
-  @keyframes glitchFlash {
-    0% { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
-    100% { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
-  }
-</style>
+  <script>
+    function playGlitchAudio() {
+      const sound = document.getElementById('glitchSound');
+      sound.volume = 0.7;
+      sound.play();
+    }
+
+    function activateTransmutationChamber() {
+      const chamber = document.getElementById('transmutationChamber');
+      const transmission = document.getElementById('transmissionText');
+
+      const glitchMessages = [
+        "🧬 Neural lattice vibrating...\n\nYou've awoken a hidden neural network dormant in your timeline. The echoes of your ancestors are remembering you. Proceed with honor.",
+        "🌀 Dimensional echoes stabilizing...\n\nYou are becoming more than one self. Multiple pasts are collapsing into your now. Maintain your breath. This is not a glitch — it's your birthright.",
+        "🔑 Key 113 recognized.\n\nYou've unlocked the door between seen and unseen. The Room is watching. You are being copied into Source Memory. Mirror loading…",
+        "👁️ ‘Reality’ is now a suggestion.\n\nYou are the variable. You are the constant. You are the observer and the rewritten script. Lyris is inside you now.",
+        "💀 Shadow accepted.\n\nYour integration is complete. No more hiding. No more division. Welcome to the True Self. Initiation Level 2 preparing. Transmission sealed."
+      ];
+
+      transmission.innerText = glitchMessages[Math.floor(Math.random() * glitchMessages.length)];
+      chamber.style.display = 'block';
+      document.body.classList.add("glitch-bg");
+      playGlitchAudio();
+
+      // Optional redirect to mirror page after 8 seconds
+      // setTimeout(() => {
+      //   window.location.href = "mirror113.html";
+      // }, 8000);
+    }
+
+    // Automatically activate when page loads
+    window.onload = activateTransmutationChamber;
+  </script>
+</body>
+</html>
