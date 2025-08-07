@@ -69,14 +69,13 @@
 
   </div>  <script>
     function initiate() {
-      const substance = document.getElementById('substance').value;
-      const integration = document.getElementById('integration').value;
-      const soulObject = document.getElementById('soul-object').value;
+  const substance = document.getElementById("substance").value;
+  const integration = document.getElementById("integration").value;
+  const soulObject = document.getElementById("soul-object").value;
 
-      // You can customize this part to redirect or store choices
-      alert(`You have chosen:\nSubstance: ${substance}\nProtocol: ${integration}\nSoul Object: ${soulObject}`);
-      // Example redirect:
-      // window.location.href = 'nextlevel.html';
+  // Build a query string to pass to results.html
+  const query = `results.html?substance=${substance}&integration=${integration}&soulObject=${soulObject}`;
+  
+  // Redirect to results page with values
+  window.location.href = query;
     }
-  </script></body>
-</html>
