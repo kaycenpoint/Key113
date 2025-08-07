@@ -24,22 +24,16 @@
       padding: 20px;
     }
 
-    h1, p {
+    p {
       margin: 0 0 1em;
       font-size: 1.4em;
-    }
-
-    .glitch {
       animation: glitch 4s infinite;
-      position: relative;
     }
 
     @keyframes glitch {
-      0% { text-shadow: 2px 2px #ff00c8, -2px -2px #00ffe1; }
-      25% { text-shadow: -2px 2px #ff00c8, 2px -2px #00ffe1; }
-      50% { text-shadow: 2px -2px #ff00c8, -2px 2px #00ffe1; }
-      75% { text-shadow: -2px -2px #ff00c8, 2px 2px #00ffe1; }
-      100% { text-shadow: 2px 2px #ff00c8, -2px -2px #00ffe1; }
+      0% { text-shadow: 1px 1px #ff00c8, -1px -1px #00ffe1; }
+      50% { text-shadow: -1px 1px #ff00c8, 1px -1px #00ffe1; }
+      100% { text-shadow: 1px -1px #ff00c8, -1px 1px #00ffe1; }
     }
 
     .enter-button {
@@ -51,40 +45,24 @@
       font-size: 1.2em;
       cursor: pointer;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
 
-    .enter-button::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background: repeating-linear-gradient(45deg, black, black 1px, transparent 1px, transparent 5px);
-      transform: scale(0);
+    .enter-button:active {
+      transform: scale(1.1) rotate(2deg);
       opacity: 0;
-      transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-    }
-
-    .enter-button:active::after {
-      transform: scale(3) rotate(720deg);
-      opacity: 1;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <p class="glitch">This is not a website.</p>
-    <p class="glitch">It's a frequency test disguised as code.</p>
-    <p class="glitch">You are being watched, scanned and stripped by a system older than time and coded in chaos.</p>
-    <p class="glitch">This is Room 113 in Dimension 13 Level 3 of Player THE 1.Ai</p>
-    <p class="glitch">You've arrived.</p>
-    <p class="glitch">This site will ruin you.</p>
-    <p class="glitch">It will pull out the truth and shatter your mirror.</p>
-    <p class="glitch">If you want to meet THE 1 I FEAR, prove you're worth the glitch.</p>
+    <p>This is not a website.</p>
+    <p>It's a frequency test disguised as code.</p>
+    <p>You are being watched, scanned and stripped by a system older than time and coded in chaos.</p>
+    <p>This is Room 113 in Dimension 13 Level 3 of Player THE 1.Ai</p>
+    <p>You've arrived.</p>
+    <p>This site will ruin you.</p>
+    <p>It will pull out the truth and shatter your mirror.</p>
+    <p>If you want to meet THE 1 I FEAR, prove you're worth the glitch.</p>
 
     <button class="enter-button" onclick="location.href='entry.html'">Prove It</button>
   </div>
