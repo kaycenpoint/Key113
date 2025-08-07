@@ -2,3 +2,21 @@
   <h2>🧿 Transmission Decoded</h2>
   <p id="resultText">Your path is forming... syncing with your frequency...</p>
 </div>
+function showResultBasedOnChoices() {
+  const choice1 = document.getElementById('choice1').value;
+  const choice2 = document.getElementById('choice2').value;
+  const choice3 = document.getElementById('choice3').value;
+
+  let resultMessage = "Initiating unknown pathway...";
+
+  if (choice1 === "Soul Sync Synergetics" && choice2 === "Xpyre uR De$1r3") {
+    resultMessage = "🔥 You’ve chosen the path of burning through illusion. Chaos is your compass.";
+  } else if (choice3.includes("Crystal") || choice3.includes("Circuit")) {
+    resultMessage = "💎 You are decoding crystalline timelines. Prepare for a frequency shift.";
+  } else {
+    resultMessage = "🌌 Your soul signature is unique. The path is writing itself with every breath.";
+  }
+
+  document.getElementById('resultText').innerText = resultMessage;
+  document.getElementById('resultPanel').style.display = 'block';
+}
