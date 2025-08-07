@@ -1,83 +1,82 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Initiation Sequence – Room 113</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initiation - Room 113</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: black;
-      color: #e60073;
+      background: black;
+      color: lime;
       font-family: 'Courier New', Courier, monospace;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
+      overflow: hidden;
+    }
+    .container {
       text-align: center;
-    }h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
-}
-
-.question {
-  margin: 20px 0;
-}
-
-input, textarea, button {
-  background: black;
-  color: #e60073;
-  border: 1px solid #e60073;
-  padding: 10px;
-  margin-top: 10px;
-  width: 80%;
-  max-width: 400px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-button {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #e60073;
-  color: black;
-}
-
-.glitch {
-  animation: glitch 2s infinite;
-}
-
-@keyframes glitch {
-  0% { text-shadow: 2px 2px #ff00c8, -2px -2px #00ffe1; }
-  25% { text-shadow: -2px 2px #ff00c8, 2px -2px #00ffe1; }
-  50% { text-shadow: 2px -2px #ff00c8, -2px 2px #00ffe1; }
-  75% { text-shadow: -2px -2px #ff00c8, 2px 2px #00ffe1; }
-  100% { text-shadow: 2px 2px #ff00c8, -2px -2px #00ffe1; }
-}
-
+      max-width: 800px;
+      padding: 20px;
+    }
+    label, p {
+      font-size: 1.2em;
+      display: block;
+      margin: 1em 0 0.5em;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 1em;
+      background: white;
+      color: black;
+      border: none;
+      margin-bottom: 1em;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <h1 class="glitch">INITIATION SEQUENCE: BEGIN</h1>  <div class="question">
-    <p class="glitch">What is your DreamName?</p>
-    <input type="text" placeholder="Enter DreamName..." />
-  </div>  <div class="question">
-    <p class="glitch">Name one truth you’ve never spoken aloud.</p>
-    <textarea rows="3" placeholder="Speak it in code..."></textarea>
-  </div>  <div class="question">
-    <p class="glitch">Choose the soul-object that calls to you most:</p>
-    <select>
-      <option value="">— Select One —</option>
-      <option value="broken-compass">Broken Compass</option>
-      <option value="torn-veil">Torn Veil</option>
-      <option value="glowing-ember">Glowing Ember</option>
-      <option value="fractured-mirror">Fractured Mirror</option>
-      <option value="inked-bone">Inked Bone</option>
-    </select>
-  </div><button onclick="alert('You’ve been seen. Await the glitch.')">Submit Initiation</button>
+  <div class="container">
+    <p>What substance do you choose?</p>
+    <select id="substance">
+      <option value="plasma">Plasma</option>
+      <option value="ether">Ether</option>
+      <option value="data">Raw Data</option>
+      <option value="starlight">Starlight</option>
+      <option value="dreamdust">Dreamdust</option>
+    </select><p>Choose your integration protocol:</p>
+<select id="integration">
+  <option value="sync">Soul Sync Synergetics</option>
+  <option value="empathy">Emotional Empathy Epitome</option>
+  <option value="desire">Xpyre uR De$1r3</option>
+</select>
 
-</body>
+<p>Choose your soul object:</p>
+<select id="soul-object">
+  <option value="mirror">Fractal Mirror Blade</option>
+  <option value="orb">Eclipse Memory Orb</option>
+  <option value="cloak">Cloak of Quantum Veils</option>
+  <option value="key">Dimensional Skeleton Key</option>
+  <option value="seed">Lunar Bloom Seed</option>
+  <option value="circuit">Emotive Circuit Crown</option>
+  <option value="vial">Vial of Time-Turnt Ink</option>
+</select>
+
+<br>
+<button onclick="initiate()">Initiate Sequence</button>
+
+  </div>  <script>
+    function initiate() {
+      const substance = document.getElementById('substance').value;
+      const integration = document.getElementById('integration').value;
+      const soulObject = document.getElementById('soul-object').value;
+
+      // You can customize this part to redirect or store choices
+      alert(`You have chosen:\nSubstance: ${substance}\nProtocol: ${integration}\nSoul Object: ${soulObject}`);
+      // Example redirect:
+      // window.location.href = 'nextlevel.html';
+    }
+  </script></body>
 </html>
