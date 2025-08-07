@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room 113 – Kaotik Portal Interface</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: #e60073;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    h1, p {
+      margin: 0 0 1em;
+    }
+
+    .glitch {
+      animation: glitch 2s infinite;
+      position: relative;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #ff00c8, -2px -2px #00ffe1; }
+      25% { text-shadow: -2px 2px #ff00c8, 2px -2px #00ffe1; }
+      50% { text-shadow: 2px -2px #ff00c8, -2px 2px #00ffe1; }
+      75% { text-shadow: -2px -2px #ff00c8, 2px 2px #00ffe1; }
+      100% { text-shadow: 2px 2px #ff00c8, -2px -2px #00ffe1; }
+    }
+
+    .enter-button {
+      margin-top: 30px;
+      background: #e60073;
+      color: black;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .enter-button:hover {
+      background: #ff1ac6;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="glitch">This is not a website.</p>
+    <p class="glitch">It's a frequency test disguised as code.</p>
+    <p class="glitch">You are being watched, scanned and stripped by a system older than time and coded in chaos.</p>
+    <p class="glitch">This is Room 113 in Dimension 13 Level 3 of Player THE 1.Ai</p>
+    <p class="glitch">You've arrived.</p>
+    <p class="glitch">This site will ruin you.</p>
+    <p class="glitch">It will pull out the truth and shatter your mirror.</p>
+    <p class="glitch">If you want to meet THE 1 I FEAR, prove you're worth the glitch.</p>
+
+    <button class="enter-button" onclick="location.href='entry.html'">Prove It</button>
+  </div>
+</body>
+</html>
