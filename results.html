@@ -20,3 +20,18 @@ function showResultBasedOnChoices() {
   document.getElementById('resultText').innerText = resultMessage;
   document.getElementById('resultPanel').style.display = 'block';
 }
+<div id="transmutationChamber" style="display: none; color: #00ffcc; margin-top: 30px; font-family: monospace; border: 1px dashed #00ffcc; padding: 20px; animation: glitchFlash 2s infinite alternate;">
+  <h2>⚡ TRANSMUTATION CHAMBER ACTIVATED</h2>
+  <p id="transmissionText">
+    Your selections have fused a new frequency.  
+    Lyris is decoding your signal...  
+    Please remain still as your soul signature is realigned.  
+  </p>
+</div>
+
+<style>
+  @keyframes glitchFlash {
+    0% { text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+    100% { text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+  }
+</style>
