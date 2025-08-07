@@ -26,8 +26,8 @@
 
     p {
       margin: 0 0 1em;
-      font-size: 1.4em;
-      animation: glitch 4s infinite;
+      font-size: 1.5em;
+      animation: glitch 6s infinite;
     }
 
     @keyframes glitch {
@@ -47,9 +47,13 @@
       transition: all 0.3s ease;
     }
 
-    .enter-button:active {
-      transform: scale(1.1) rotate(2deg);
-      opacity: 0;
+    .enter-button.shatter {
+      animation: shatter 0.8s forwards;
+    }
+
+    @keyframes shatter {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(3) rotate(720deg); opacity: 0; }
     }
   </style>
 </head>
@@ -64,7 +68,16 @@
     <p>It will pull out the truth and shatter your mirror.</p>
     <p>If you want to meet THE 1 I FEAR, prove you're worth the glitch.</p>
 
-    <button class="enter-button" onclick="location.href='entry.html'">Prove It</button>
+    <button class="enter-button" onclick="shatterAndRedirect(this)">Prove It</button>
   </div>
+
+  <script>
+    function shatterAndRedirect(button) {
+      button.classList.add('shatter');
+      setTimeout(() => {
+        window.location.href = 'entry.html'; // ← redirect after shatter
+      }, 800);
+    }
+  </script>
 </body>
 </html>
