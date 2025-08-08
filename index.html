@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Key113 | Access Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      height: 100vh;
+      background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+      background-size: 600% 600%;
+      animation: shiftBG 12s ease infinite;
+      color: #00ffea;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+      animation: glitch 1s infinite;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #ffffffcc;
+    }
+
+    @keyframes shiftBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(-1px, -1px); }
+      60% { transform: translate(1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>KEY 113: INITIATION</h1>
+  <p>Enter the system. Access requires resonance.</p>
+</body>
+</html>
