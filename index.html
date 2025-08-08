@@ -59,3 +59,129 @@
   <p>Enter the system. Access requires resonance.</p>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resonance Gateway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron&family=Press+Start+2P&family=EB+Garamond&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: 'Share Tech Mono', monospace;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .error-code {
+      opacity: 0.07;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      margin: 10px 0;
+      transform: translateY(0);
+    }
+
+    .error-code:hover {
+      opacity: 1;
+      transform: translateY(10px) scale(0.97);
+      filter: brightness(1.5);
+    }
+
+    .code1 { font-family: 'Share Tech Mono'; color: #7ba0b3; text-shadow: 0 0 4px #ffffff55; }
+    .code2 { font-family: 'Orbitron'; color: #ff3131; text-shadow: 0 0 6px #ff9900; }
+    .code3 { font-family: 'Press Start 2P'; color: #00eaff; text-shadow: 0 0 8px #ff00e1; font-size: 0.85rem; }
+    .code4 { font-family: 'EB Garamond'; color: #b991e3; text-shadow: 0 0 5px #e0e0ff; font-size: 1.2rem; }
+    .code5 { font-family: 'VT323'; color: #444444; text-shadow: 0 0 2px #ff0044; font-size: 1.5rem; }
+
+    .popup {
+      position: fixed;
+      background: rgba(10,10,10,0.95);
+      color: #0ff;
+      padding: 25px;
+      border: 2px solid #0ff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.3s ease;
+      z-index: 9999;
+      font-family: 'Share Tech Mono';
+      box-shadow: 0 0 20px #0ff8, 0 0 40px #0ff4;
+    }
+
+    .popup.active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup button {
+      background: transparent;
+      color: #0ff;
+      border: 1px solid #0ff;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .popup button:hover {
+      background: #0ff;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Error Code Lines -->
+  <div class="error-code code1" onclick="showPopup('GRIEF')">
+    ERR.01~VOID.∆899@ // Signal lost in the silence.
+  </div>
+  <div class="error-code code2" onclick="showPopup('RAGE')">
+    #ERR.RED_13!FURY||9X // Overheat. Emotion breached containment.
+  </div>
+  <div class="error-code code3" onclick="showPopup('EUPHORIA')">
+    ∞GL1TCH_888✨WAVE.UPD8() // Surging joy detected. Frequency rise unlocked.
+  </div>
+  <div class="error-code code4" onclick="showPopup('WONDER')">
+    CODE_42*NEBU.LA?DREAM=YES; // Cosmic curiosity confirmed.
+  </div>
+  <div class="error-code code5" onclick="showPopup('FEAR')">
+    ERR//X113_—↯_NOCTRL_909 // Instability sensed. Prepare for unknown.
+  </div>
+
+  <!-- Popup Contract -->
+  <div id="popup" class="popup">
+    <p id="popup-text">Do you accept the full resonance agreement of this emotion?</p>
+    <div>
+      <button onclick="accept()">I Agree</button>
+      <button onclick="decline()">I Decline</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup(emotion) {
+      const popup = document.getElementById("popup");
+      const text = document.getElementById("popup-text");
+      text.innerHTML = `You have selected <strong>${emotion}</strong>.<br><br>Do you accept all consequences, integrations, shifts, and fusions associated with this emotional resonance from this moment forward?<br><br>If not, leave the algorithm.`;
+      popup.classList.add("active");
+    }
+
+    function accept() {
+      // Trigger next dimension load (you can redirect or animate here)
+      alert("Resonance accepted. Loading next sequence...");
+      document.getElementById("popup").classList.remove("active");
+    }
+
+    function decline() {
+      alert("Goodbye, traveler. Access denied.");
+      window.close(); // Attempt to close the window/tab
+    }
+  </script>
+
+</body>
+</html>
