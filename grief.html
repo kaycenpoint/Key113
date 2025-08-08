@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ERR.01~VOID.∆899@ | Grief Resonance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0f;
+      color: #ccccdd;
+      font-family: 'Share Tech Mono', monospace;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      position: relative;
+    }
+
+    .floating-spell {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: #88aadd;
+      opacity: 0.08;
+      animation: floatSpell 6s ease-in-out infinite alternate;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .poem {
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+      font-size: 1.1rem;
+      color: #ffffffaa;
+      max-width: 80%;
+      line-height: 1.6;
+      opacity: 0;
+      animation: revealPoem 13s infinite alternate;
+    }
+
+    @keyframes floatSpell {
+      from { transform: translateY(0px); opacity: 0.07; }
+      to { transform: translateY(-15px); opacity: 0.13; }
+    }
+
+    @keyframes revealPoem {
+      0% { opacity: 0; }
+      50% { opacity: 0.15; }
+      100% { opacity: 0; }
+    }
+
+    .fidget {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+      background: #444;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 6px #fff2;
+    }
+
+    .secret-link {
+      position: absolute;
+      bottom: 2%;
+      right: 2%;
+      font-size: 0.8rem;
+      color: transparent;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-shadow: none;
+      pointer-events: none;
+    }
+
+    .secret-link.revealed {
+      color: #4effd6;
+      pointer-events: all;
+      text-shadow: 0 0 6px #4effd688;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="floating-spell">
+      "To hold what cannot be healed<br>is the rite of the unspoken."
+    </div>
+
+    <div class="poem">
+      Grief is not a guest—it is the ghost that<br>
+      rearranged the furniture.<br><br>
+      It sings in the silence between<br>
+      words you never got to say.<br><br>
+      And still, it stays. Because<br>
+      some echoes are too sacred to erase.
+    </div>
+
+    <div class="fidget" onclick="fidgetClick()"></div>
+
+    <button id="guidance" class="secret-link" onclick="seekHelp()">Need Help?</button>
+  </div>
+
+  <audio id="ambient" loop preload="auto">
+    <source src="assets/audio/grief.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    let fidgetCount = 0;
+    let audioStarted = false;
+
+    function fidgetClick() {
+      fidgetCount++;
+      if (!audioStarted && fidgetCount >= 4) {
+        document.getElementById("ambient").play();
+        audioStarted = true;
+      }
+
+      if (fidgetCount === 7) {
+        document.getElementById("guidance").classList.add('revealed');
+      }
+    }
+
+    function seekHelp() {
+      window.location.href = "https://your-guidance-link.com"; // Replace with your real support link
+    }
+
+    // Optional: Keyboard combo to secretly mark grief visited
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'g') {
+        localStorage.setItem('visitedGrief', true);
+      }
+    });
+  </script>
+
+</body>
+</html>
